@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+if [[ -z $@ ]]; then
+  HISTFILE=~/.zsh_history
+  fc -R
+  fc -r -l 2000
+else
+  echo "$@" | awk '!($1="")' | xsel -i
+fi
+
